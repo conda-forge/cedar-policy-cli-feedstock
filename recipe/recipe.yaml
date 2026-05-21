@@ -18,9 +18,9 @@ build:
     content:
       - if: unix
         then:
-          - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path cedar-policy-cli
+          - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path cedar-policy-cli --features partial-eval
         else:
-          - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path cedar-policy-cli
+          - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path cedar-policy-cli --features partial-eval
       - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
 requirements:
@@ -34,6 +34,7 @@ requirements:
 tests:
   - script:
     - cedar --help
+    - cedar partially-authorize --help
   - package_contents:
       bin:
         - cedar
