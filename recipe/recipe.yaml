@@ -1,5 +1,5 @@
 context:
-  version: "4.14.0"
+  version: "4.14.1"
 
 package:
   name: cedar-policy-cli
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cedar-policy/cedar/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: f99a071030cb159267a6ff16c3eaac0a185c886388c366f9bf0368f1c7608e1e
+  sha256: 101fb1be2df0d461f4ed2e15cb3ec503c6b394b194344613ff7b1a2029bd0a69
 
 build:
   number: 0
